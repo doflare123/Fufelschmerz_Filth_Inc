@@ -5,6 +5,7 @@ const { sequelize } = require('./models');
 const authRoutes = require('./routes/auth');
 const userRoutes = require('./routes/user');
 const adminRoutes = require('./routes/admin');
+const path = require('path');
 
 dotenv.config();
 
@@ -14,6 +15,19 @@ app.use(cors({
   origin: 'http://localhost:5173',
   credentials: true, // если будешь использовать cookie
 }));
+
+// Serve static files from the React app
+app.use(express.static(path.join(__dirname, 'public')));
+
+// API routes (твой backend)
+app.get('/api/hello', (req, res) => {
+  res.json({ message: 'Hello from server' });
+});
+
+// All remaining requests return the React app, so it can handle routing.
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
+});
 
 app.use('/auth', authRoutes);
 app.use('/users', userRoutes);
