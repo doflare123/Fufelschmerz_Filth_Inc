@@ -9,7 +9,7 @@ services:
       - server
 
   server:
-    build: ./server
+    build: ./backend
     ports:
       - "5000:5000"
     depends_on:
@@ -20,18 +20,7 @@ services:
       DB_NAME: minecraft_bank
       DB_HOST: localhost
       DB_PORT: 5432
-
-  postgres:
-    image: postgres:15
-    restart: always
-    environment:
-      POSTGRES_USER: MinecraftDB
-      POSTGRES_PASSWORD: MinecraftDB
-      POSTGRES_DB: minecraft_bank
-    volumes:
-      - pgdata:/var/lib/postgresql/data
-    ports:
-      - "5432:5432"
+      JWT_SECRET: d4e0e5286f1a6a8d19bcaaed1b728d3e35c2cf0d8cfd9a05f7a08070cb404f4b9966bb2b1cfb2e51b3e6659e18c57bfa3ae5d4b16d2ed0f2821cb64c4c10f27f
 
 volumes:
   pgdata:
