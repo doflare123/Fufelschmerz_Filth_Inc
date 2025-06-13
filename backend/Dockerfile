@@ -1,13 +1,3 @@
-# 1. Билдим frontend
-FROM node:20 AS client-build
-
-WORKDIR /client
-COPY ../front/bank-client/package*.json ./
-RUN npm install
-COPY ../client ./
-RUN npm run build
-
-# 2. Билдим backend и копируем фронт в public
 FROM node:20
 
 WORKDIR /app
