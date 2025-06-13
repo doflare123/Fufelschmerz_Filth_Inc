@@ -386,7 +386,7 @@ const MinecraftAdminPanel = () => {
     try {
       setError('');
       const token = localStorage.getItem('token');
-      const response = await fetch('http://localhost:5000/admin/bank-resources', {
+      const response = await fetch('https://fufelschmerz-filth-inc-1.onrender.com/admin/bank-resources', {
         headers: { 'Authorization': `Bearer ${token}` }
       });
       if (!response.ok) {
@@ -404,7 +404,7 @@ const MinecraftAdminPanel = () => {
     try {
       setError('');
       const token = localStorage.getItem('token');
-      const response = await fetch('http://localhost:5000/users/resourcessearch', {
+      const response = await fetch('https://fufelschmerz-filth-inc-1.onrender.com/users/resourcessearch', {
         headers: { 'Authorization': `Bearer ${token}` }
       });
       if (!response.ok) {
@@ -422,7 +422,7 @@ const MinecraftAdminPanel = () => {
     try {
       setError('');
       setLoading(true);
-      const response = await fetch('http://localhost:5000/users/exchange-rates');
+      const response = await fetch('https://fufelschmerz-filth-inc-1.onrender.com/users/exchange-rates');
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
@@ -447,7 +447,7 @@ const MinecraftAdminPanel = () => {
     setLoading(true);
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch('http://localhost:5000/admin/resources', {
+      const response = await fetch('https://fufelschmerz-filth-inc-1.onrender.com/admin/resources', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -481,7 +481,7 @@ const MinecraftAdminPanel = () => {
     setLoading(true);
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch('http://localhost:5000/admin/bank-resources', {
+      const response = await fetch('https://fufelschmerz-filth-inc-1.onrender.com/admin/bank-resources', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -517,7 +517,7 @@ const MinecraftAdminPanel = () => {
     setLoading(true);
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch('http://localhost:5000/admin/exchange-rates', {
+      const response = await fetch('https://fufelschmerz-filth-inc-1.onrender.com/admin/exchange-rates', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -555,7 +555,7 @@ const MinecraftAdminPanel = () => {
     setLoading(true);
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch(`http://localhost:5000/admin/users/${userResourceData.username}/resources/${userResourceData.resourceName}`, {
+      const response = await fetch(`https://fufelschmerz-filth-inc-1.onrender.com/admin/users/${userResourceData.username}/resources/${userResourceData.resourceName}`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

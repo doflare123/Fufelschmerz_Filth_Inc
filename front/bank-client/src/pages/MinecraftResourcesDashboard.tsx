@@ -167,7 +167,7 @@ const MinecraftResourcesDashboard = () => {
   const fetchUserResources = async () => {
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch('http://localhost:5000/users/resources', {
+      const response = await fetch('https://fufelschmerz-filth-inc-1.onrender.com/users/resources', {
         headers: { 'Authorization': `Bearer ${token}` }
       });
       const data = await response.json();
@@ -187,7 +187,7 @@ const MinecraftResourcesDashboard = () => {
   // Fetch exchange rates
   const fetchExchangeRates = async () => {
     try {
-      const response = await fetch('http://localhost:5000/users/exchange-rates');
+      const response = await fetch('https://fufelschmerz-filth-inc-1.onrender.com/users/exchange-rates');
       const data = await response.json();
       setExchangeRates(data);
     } catch (error) {
@@ -203,7 +203,7 @@ const MinecraftResourcesDashboard = () => {
     }
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch(`http://localhost:5000/users/search?q=${query}`, {
+      const response = await fetch(`https://fufelschmerz-filth-inc-1.onrender.com/users/search?q=${query}`, {
         headers: { 'Authorization': `Bearer ${token}` }
       });
       const data = await response.json();
@@ -217,7 +217,7 @@ const MinecraftResourcesDashboard = () => {
   const searchResources = async () => {
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch('http://localhost:5000/users/resourcessearch', {
+      const response = await fetch('https://fufelschmerz-filth-inc-1.onrender.com/users/resourcessearch', {
         headers: { 'Authorization': `Bearer ${token}` }
       });
       const data = await response.json();
@@ -237,7 +237,7 @@ const MinecraftResourcesDashboard = () => {
     setLoading(true);
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch('http://localhost:5000/users/transfer', {
+      const response = await fetch('https://fufelschmerz-filth-inc-1.onrender.com/users/transfer', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -271,7 +271,7 @@ const MinecraftResourcesDashboard = () => {
   const getExchangeHistory = async (from, to) => {
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch(`http://localhost:5000/users/exchange-rate-history?from=${from}&to=${to}`, {
+      const response = await fetch(`https://fufelschmerz-filth-inc-1.onrender.com/users/exchange-rate-history?from=${from}&to=${to}`, {
         headers: { 'Authorization': `Bearer ${token}` }
       });
       const data = await response.json();
