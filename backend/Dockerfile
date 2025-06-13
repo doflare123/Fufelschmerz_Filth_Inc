@@ -2,7 +2,7 @@
 FROM node:20 AS client-build
 
 WORKDIR /client
-COPY ../client/package*.json ./
+COPY ../front/bank-client/package*.json ./
 RUN npm install
 COPY ../client ./
 RUN npm run build
