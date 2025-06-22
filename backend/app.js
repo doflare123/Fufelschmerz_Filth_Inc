@@ -13,8 +13,13 @@ const app = express();
 app.use(express.json());
 app.use(cors({
   origin: 'http://localhost:5173',
-  credentials: true, // если будешь использовать cookie
+  credentials: true,
 }));
+
+
+app.use('/auth', authRoutes);
+app.use('/users', userRoutes);
+app.use('/admin', adminRoutes);
 
 // Serve static files from the React app
 app.use(express.static(path.join(__dirname, 'public')));
@@ -29,9 +34,6 @@ app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
-app.use('/auth', authRoutes);
-app.use('/users', userRoutes);
-app.use('/admin', adminRoutes);
 
 const PORT = process.env.PORT || 5000;
 
