@@ -485,7 +485,7 @@ const MinecraftAdminPanel = () => {
     setLoading(true);
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch('https://fufelschmerz-filth-inc-1.onrender.com/admin/bank-resources', {
+      const response = await fetch('/admin/bank-resources', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
