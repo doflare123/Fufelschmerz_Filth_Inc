@@ -387,6 +387,7 @@ const MinecraftAdminPanel = () => {
       setError('');
       const token = localStorage.getItem('token');
       const response = await fetch('https://fufelschmerz-filth-inc-1.onrender.com/admin/bank-resources', {
+        method: 'GET',
         headers: { 'Authorization': `Bearer ${token}` }
       });
       if (!response.ok) {
@@ -405,6 +406,7 @@ const MinecraftAdminPanel = () => {
       setError('');
       const token = localStorage.getItem('token');
       const response = await fetch('https://fufelschmerz-filth-inc-1.onrender.com/users/resourcessearch', {
+        method: 'GET',
         headers: { 'Authorization': `Bearer ${token}` }
       });
       if (!response.ok) {
@@ -422,7 +424,9 @@ const MinecraftAdminPanel = () => {
     try {
       setError('');
       setLoading(true);
-      const response = await fetch('https://fufelschmerz-filth-inc-1.onrender.com/users/exchange-rates');
+      const response = await fetch('https://fufelschmerz-filth-inc-1.onrender.com/users/exchange-rates', {
+        method: 'GET'
+      });
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
