@@ -381,6 +381,12 @@ const MinecraftAdminPanel = () => {
     }
   }, [navigate]);
 
+    useEffect(() => {
+    fetchBankResources();
+    fetchAllResources();
+    fetchExchangeRates();
+  }, []);
+
   // API calls
   const fetchBankResources = async () => {
     try {
@@ -589,12 +595,6 @@ const MinecraftAdminPanel = () => {
       fetchExchangeRates();
     }
   }, [activeTab]);
-
-  useEffect(() => {
-    fetchBankResources();
-    fetchAllResources();
-    fetchExchangeRates();
-  }, []);
 
   useEffect(() => {
     if (message) {
